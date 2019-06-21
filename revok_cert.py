@@ -22,7 +22,6 @@ if __name__ == '__main__':
     crl_dist_point = get_crl_distrib_points()
     crl_path = os.path.join(os.path.dirname(__file__), crl_dist_point.split('/')[-1])
     crl = requests.get(crl_dist_point)
-    crl_path = os.path.join(os.path.dirname(__file__), crl_dist_point.split('/')[-1])
     with open(crl_path, 'wb') as f:
         f.write(crl.content)
     get_revok_date_and_ser_number()
